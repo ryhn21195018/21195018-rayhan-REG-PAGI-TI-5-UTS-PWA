@@ -1,0 +1,20 @@
+{
+  "name": "UTS PWA",
+  "short_name": "UTS",
+  "icons": [{
+    "src": "/Ikon.png",
+      "sizes": "163x163",
+      "type": "image/png"
+  }],
+ 
+  
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "white",
+
+
+ 
+"permissions": ["notifications"] 
+}

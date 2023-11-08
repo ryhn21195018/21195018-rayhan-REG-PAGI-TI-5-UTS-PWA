@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/21195021.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="white"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="UTS PWA">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <title>UTS PWA</title>
+    <style>
+      body {
+        background-color: #e8e8e8;
+        
+      }
+      
+      .kartu {
+        width: 800px;
+        margin: 0 auto;
+        margin-top: 70px;
+            box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.03);
+    transition: all .3s;
+           background-color: #06eb38;
+    border: solid 8px #100413;
+    /* border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px; */
+      } 
+      /* .kartu:hover {
+        background-color: #d6c6d5;
+        border: solid 8px #0c070c;
+        border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+      } */
+      .foto {
+            padding: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+      }
+      tbody {
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(1, 51, 1);
+}
+.biodata {
+    margin-top: 30px;
+}
+
+    </style>
+  </head>
+  <body>
+        
+        <!-- Isi Biodata Paling Keren di HTML disini -->
+<div class="container">
+  <div class="card kartu">
+    <div class="row">
+      <div class="col-md-4">
+      <div class="foto">
+        <img src="han.PNG" class="img-thumbnail" alt="" width="150" height="auto">
+      </div>
+      </div>
+      <div class="col-md-8 kertas-biodata">
+        <div class="biodata">
+        <table width="100%" border="0">
+    <tbody><tr>
+        <td valign="top">
+          </tr>
+          <a><h4  style="color: #0c0c0c; font-weight:bold; font-family: 'Times New Roman', Times, serif;" class="text-center  mt-3">BIODATA</h4></a>
+          <tr>
+            <td style="font-family: 'Times New Roman', Times, serif;" width="25%" valign="top" class="textt">Nama</td>
+              <td width="2%">:</td>
+              <td style=" font-family: 'Times New Roman', Times, serif;"> Muhammad Raikhan Al Fattah</td>
+            
+          <tr>
+              <td style="font-family: 'Times New Roman', Times, serif;" class="textt">NIM</td>
+                <td>:</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">21195018</td>
+            </tr>
+          <tr>
+              <td style="font-family: 'Times New Roman', Times, serif;" class="textt">Kelas</td>
+                <td>:</td>
+                <td  style="font-family: 'Times New Roman', Times, serif;">Reguler pagi</td>
+            </tr>
+          <tr>
+              <td style="font-family: 'Times New Roman', Times, serif;" class="textt">Semester</td>
+                <td>:</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">5</td>
+            </tr>
+          <tr>
+              <td style="font-family: 'Times New Roman', Times, serif;" class="textt">Mata Kuliah</td>
+                <td>:</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">Pemrograman Perangkat Bergerak</td>
+            </tr>
+          <tr>
+              <td style="font-family: 'Times New Roman', Times, serif;" valign="top" class="textt">Prodi</td>
+                <td valign="top">:</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">Teknik Informatika</td>
+          </tr>
+          <tr>
+            <td style="font-family: 'Times New Roman', Times, serif;" class="textt">Tujuan Belajar PWA</td>
+              <td>:</td>
+              <td style="font-family: 'Times New Roman', Times, serif;">Menambah Ilmu Pengetahuan</td>
+          </tr>
+        <tr>
+        </tbody>
+      </table>
+        </td>
+    </tr>  <table border="0" width="100%" style="padding-left: 2px; padding-right: 13px;">
+          <tbody>
+            
+    
+    </tbody></table>
+    <br>
+    <h2>Formulir Komentar</h2>
+    <form id="komentar-form">
+       <br> <input type="text" id="nama" placeholder="Masukkan Nama Anda"> </br>
+        <br><input type="text" id="komentar" placeholder="Masukkan Komentar"></br>
+       <br> <button type="submit">Submit</button> </br>
+    </form>
+</br>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/indexdb.js"></script>
+    <script>
+    window.onload = () => {
+        'use strict';
+      
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                   .register('./sw.js');
+        }
+      }
+      </script>
+<script>
+    // Minta izin notifikasi
+if ('Notification' in window) {
+  Notification.requestPermission()
+    .then(function (permission) {
+      if (permission === 'granted') {
+        showNotification('Selamat datang!', 'Terima kasih telah menggunakan PWA ini.'); 
+        alert('Yuhuy Selamat Datang');
+      }
+      else if (permission === 'denied') {
+        // Izin diblokir
+        alert('Yahah kasihan diblokir');
+    }
+
+    
+    });
+    
+}
+
+// Fungsi untuk menampilkan notifikasi
+function showNotification(title, message) {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    navigator.serviceWorker.ready.then(function (registration) {
+      registration.showNotification(title, {
+        body: message,
+
+      });
+    });
+  }
+}
+</script>
+  </body>
+</html>
